@@ -1,3 +1,8 @@
+#ifndef UZYTKOWNIK_H
+#define UZYTKOWNIK_H
+
+
+
 #include <iostream>
 
 
@@ -18,3 +23,4 @@ public:
     string pobierzLogin();
     string pobierzHaslo();
 };
+#endif // UZYTKOWNK_H
