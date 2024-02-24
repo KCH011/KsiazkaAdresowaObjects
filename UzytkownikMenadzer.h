@@ -1,10 +1,11 @@
 #include <iostream>
 #include <vector>
-#include "Uzytkownik.h"
-#include "PlikZUzytkownikami.h"
 #include <windows.h>
 #include <fstream>
 #include <sstream>
+
+#include "Uzytkownik.h"
+#include "PlikZUzytkownikami.h"
 
 using namespace std;
 
@@ -22,6 +23,7 @@ private:
 public:
     UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami (nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
+    void  logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
 

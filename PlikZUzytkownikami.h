@@ -1,18 +1,19 @@
 #include <iostream>
 #include <vector>
-#include "Uzytkownik.h"
-#include "MetodyPomocnicze.h"
 #include <windows.h>
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+
+#include "Uzytkownik.h"
+#include "MetodyPomocnicze.h"
 
 using namespace std;
 
 class PlikZUzytkownikami
 {
         const string nazwaPlikuZUzytkownikami;
-        fstream plikTekstowy;
+        //fstream plikTekstowy;
 
         bool czyPlikJestPusty();
         string zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik);

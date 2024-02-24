@@ -23,4 +23,4 @@ public:
     string pobierzLogin();
     string pobierzHaslo();
 };
-#endif // UZYTKOWNK_H
+#endif
