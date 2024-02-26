@@ -1,7 +1,7 @@
 #include "AdresatMenadzer.h"
 #include "MetodyPomocnicze.h"
 
-AdresatMenadzer :: AdresatMenadzer()
+AdresatMenadzer :: AdresatMenadzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami)
 {
     idOstatniegoAdresata = 0;
 }
@@ -28,6 +28,7 @@ Adresat AdresatMenadzer :: podajDaneNowegoAdresata(int idZalogowanegoUzytkownika
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
+    cin.ignore();
     adresat.ustawImie(MetodyPomocnicze :: wczytajLinie());
     adresat.ustawImie(MetodyPomocnicze :: zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.wczytajImie()));
 
@@ -45,4 +46,35 @@ Adresat AdresatMenadzer :: podajDaneNowegoAdresata(int idZalogowanegoUzytkownika
     adresat.ustawAdres(MetodyPomocnicze :: wczytajLinie());
 
     return adresat;
+}
+
+
+void AdresatMenadzer :: wyswietlWszystkichAdresatow()
+{
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << "             >>> ADRESACI <<<" << endl;
+        cout << "-----------------------------------------------" << endl;
+        for (vector <Adresat> :: iterator itr = adresaci.begin(); itr != adresaci.end(); itr++)
+        {
+            wyswietlDaneAdresata(*itr);
+        }
+        cout << endl;
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta." << endl << endl;
+    }
+    system("pause");
+}
+
+void AdresatMenadzer :: wyswietlDaneAdresata(Adresat adresat)
+{
+    cout << endl << "Id:         " << adresat.wczytajId() << endl;
+    cout << "Imie:               " << adresat.wczytajImie() << endl;
+    cout << "Nazwisko:           " << adresat.wczytajNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresat.wczytajNumerTelefonu() << endl;
+    cout << "Email:              " << adresat.wczytajEmail() << endl;
+    cout << "Adres:              " << adresat.wczytajAdres() << endl;
 }

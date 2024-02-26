@@ -17,7 +17,7 @@ class PlikZAdresatami
     bool czyPlikJestPusty();
     string zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(Adresat adresat);
 public:
-    PlikZAdresatami();
+    PlikZAdresatami(string NAZWAPLIKUZADRESATAMI);
     void dopiszAdresataDoPliku(Adresat adresat);
 
 
