@@ -11,17 +11,20 @@ void KsiazkaAdresowa :: wypiszWszystkichUzytkownikow()
     uzytkownikMenadzer.wypiszWszystkichUzytkownikow();
 }
 
-/*
 void KsiazkaAdresowa :: logowanieUzytkownika()
 {
     uzytkownikMenadzer.logowanieUzytkownika();
 }
 
-int KsiazkaAdresowa :: idZalogowanegoUzytkownika()
+void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
 {
-    uzytkownikMenadzer.idZalogowanegoUzytkownika();
+    uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
 }
-*/
+
+void KsiazkaAdresowa :: wylogowanieUzytkownika()
+{
+    uzytkownikMenadzer.wylogowanieUzytkownika();
+}
 
 
 
