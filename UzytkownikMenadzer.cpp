@@ -155,3 +155,9 @@ void UzytkownikMenadzer::wylogowanieUzytkownika()
     }
 
 }
+
+
+int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
