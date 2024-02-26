@@ -21,11 +21,12 @@ private:
     PlikZUzytkownikami plikZUzytkownikami;
 
 public:
-    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami (nazwaPlikuZUzytkownikami) {};
+    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami); //: plikZUzytkownikami (nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
-    void  logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
-
+    int logowanieUzytkownika();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    void wylogowanieUzytkownika();
 
 };

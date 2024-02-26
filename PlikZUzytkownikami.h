@@ -1,3 +1,6 @@
+#ifndef PLIKZUZYTKOWNIKAMI_H
+#define PLIKZUZYTKOWNIKAMI_H
+
 #include <iostream>
 #include <vector>
 #include <windows.h>
@@ -25,3 +28,6 @@ class PlikZUzytkownikami
         vector <Uzytkownik> wczytajUzytkownikowZPliku();
 
 };
+
+
+#endif
