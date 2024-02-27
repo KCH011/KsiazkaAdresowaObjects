@@ -75,7 +75,7 @@ void UzytkownikMenadzer ::  wypiszWszystkichUzytkownikow()
  }
 
 
- UzytkownikMenadzer :: UzytkownikMenadzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+ UzytkownikMenadzer :: UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
 {
     idZalogowanegoUzytkownika = 0;
 }
@@ -154,4 +154,10 @@ void UzytkownikMenadzer::wylogowanieUzytkownika()
         idZalogowanegoUzytkownika=0;
     }
 
+}
+
+
+int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
 }

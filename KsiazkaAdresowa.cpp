@@ -26,10 +26,20 @@ void KsiazkaAdresowa :: wylogowanieUzytkownika()
     uzytkownikMenadzer.wylogowanieUzytkownika();
 }
 
+void KsiazkaAdresowa::dodajAdresata()
+{
+    adresatMenadzer.dodajAdresata(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+}
 
+void KsiazkaAdresowa :: wyswietlWszystkichAdresatow()
+{
+    adresatMenadzer.wyswietlWszystkichAdresatow();
+}
 
-
-
+void KsiazkaAdresowa::wczytajAdresatowZPliku()
+{
+    adresatMenadzer.wczytajAdresatowZPliku(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+}
 
 
 

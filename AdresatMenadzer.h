@@ -1,19 +1,22 @@
-#include <iostream>
-#include <vector>
-#include <windows.h>
-#include <fstream>
-#include <sstream>
+#ifndef ADRESATMENADZER_H
+#define ADRESATMENADZER_H
 
-using namespace std;
+#include "Adresat.h"
+#include "PlikZAdresatami.h"
+#include <vector>
 
 class AdresatMenadzer
 {
-
-
-
-
-
-
-
-
+    vector<Adresat> adresaci;
+    int idOstatniegoAdresata;
+    PlikZAdresatami plikZAdresatami;
+public:
+    AdresatMenadzer(string nazwaPlikuZAdresatami);
+    void dodajAdresata(int idZalogowanegoUzytkownika);
+    Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
+    void wyswietlDaneAdresata(Adresat adresat);
+    void wczytajAdresatowZPliku(int idZalogowanegoUzytkownika);
 };
+
+#endif
