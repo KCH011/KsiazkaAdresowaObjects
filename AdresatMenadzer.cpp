@@ -3,7 +3,7 @@
 
 AdresatMenadzer :: AdresatMenadzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami)
 {
-    idOstatniegoAdresata = 0;
+    //idOstatniegoAdresata = 0;
 }
 
 void AdresatMenadzer :: dodajAdresata(int idZalogowanegoUzytkownika)
@@ -69,6 +69,7 @@ void AdresatMenadzer :: wyswietlWszystkichAdresatow()
     system("pause");
 }
 
+
 void AdresatMenadzer :: wyswietlDaneAdresata(Adresat adresat)
 {
     cout << endl << "Id:         " << adresat.wczytajId() << endl;
@@ -77,4 +78,10 @@ void AdresatMenadzer :: wyswietlDaneAdresata(Adresat adresat)
     cout << "Numer telefonu:     " << adresat.wczytajNumerTelefonu() << endl;
     cout << "Email:              " << adresat.wczytajEmail() << endl;
     cout << "Adres:              " << adresat.wczytajAdres() << endl;
+}
+
+
+void AdresatMenadzer::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
+{
+    adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }

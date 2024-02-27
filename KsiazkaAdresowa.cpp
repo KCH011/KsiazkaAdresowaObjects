@@ -36,7 +36,10 @@ void KsiazkaAdresowa :: wyswietlWszystkichAdresatow()
     adresatMenadzer.wyswietlWszystkichAdresatow();
 }
 
-
+void KsiazkaAdresowa::wczytajAdresatowZPliku()
+{
+    adresatMenadzer.wczytajAdresatowZPliku(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
+}
 
 
 
