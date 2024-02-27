@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>16</y>
+      <w>360</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>KsiazkaAdresowa
+-
+- UzytkownikMenadzer : uzytkownikMenadzer;
+- adresatMenadzer : AdresatMenadzer
+-
++ KsiazkaAdresowa()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>128</y>
+      <w>224</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+-
+- id : int
+- login : string
+- haslo : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>824</x>
+      <y>56</y>
+      <w>320</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>AdresatMenadzer
+-
+- idZalogowanegoUzytkownika : int
+- adresaci : vector &lt;Adresat&gt;
+- plikZAdresatami : PlikZAdresatami
+-
++ AdresatMenadzer()
++ dodajAdresata() : void
++ wyswietlWszystkichAdresatow() : void
++ wyszukajAdresatowPoImieniu () : void
++ WyszukajAdresatowPoNazwisku () : void
++ usunAdresata () : void
++ EdytujAdresata () : void
+
+- podajDaneNowegoAdresata() : Adresat
+- wyswietlDaneAdresata() : void
+- wyswietlIloscWyszukanychAdresatow() : void
+- podajIdWybranegoAdresata () : int
+- wybierzOpcjeZMenuEdycja() : char</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>296</y>
+      <w>320</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+-
+- nazwaPlikuZUzytkownikami : string
+-
++ PlikZUzytkownikami ()
++ dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik): void
++ wczyatjUzytkownikowZPliku () : void
++ zapiszWszystkichUzytkownikowDoPliku () : void
+
+- czyPlikJestPusty(fstream &amp;plikTekstowy) : bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik) : string
+- pobierzDaneUzytkownika () : Uzytkownik</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>256</y>
+      <w>224</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+-
++ konwerjsaIntNaString(int liczba) : string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>112</x>
+      <y>56</y>
+      <w>320</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik Menadzer
+-
+- idZalogowanegoUzytkownika : int
+- &lt;Uzytkownik&gt; uzytkownicy : vector
+- plikZUzytkownikami :PlikZUzytkownikami
+-
++ UzytkownikMenadzer()
++ rejestracjaUzytkownika() : void
++ wypiszWszystkichUzytkownikow(); void
++ logowanieUzytkownika() : void
++ zmianaHaslaZalogowanegoUzytkownika() : void
++ wylogowanieUzytkownika () : void
++ czyUzytkownikJestZalogowany () : Bool
++ pobierzIdZalogowanegoUzytkownika() : int
+
+- podajDaneNowegoUzytkownika() : uzystkownik
+- pobierzIdNowegoUzytkownika() : int 
+- czyIstniejeLogin(string login): bool
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>824</x>
+      <y>312</y>
+      <w>320</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>PlikZAdresatami
+-
+- nazwaPlikuZAdresatami : string
+- IdOstatniegoAdresata : int
+-
++ PlikZAdresatami()
++ dopiszAdresataDoPliku(): void
++ wczyatjAdresatowZalogowanegoUzytkownikaZPliku () : vector &lt;Adresat&gt;
++ usunAdresata(): void
++ zaktualizujDaneAdresata (): void
+
+- czyPlikJestPusty() : Bool
+- zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami
+- pobierzLiczbe () : String
+- pobierzDaneAdresata() : Adresat
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami() : int
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami() : int
+- zwrocNumerLiniiSzukanegoAdresata() : int
+- usunWybranaLinieWPliku(): void
+- pobierzZPlikuIdOstatniegoAdresata () : int
+- usunPlik(): void
+- zmienNazwePliku(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
