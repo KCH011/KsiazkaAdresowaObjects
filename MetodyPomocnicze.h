@@ -11,11 +11,12 @@ using namespace std;
 class MetodyPomocnicze
 {
 public:
-    //MetodyPomocnicze();
+     MetodyPomocnicze();
      static string konwersjaIntNaString(int liczba);
      static string wczytajLinie();
      static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
      static int konwersjaStringNaInt(string liczba);
+     static char wczytajZnak();
 };
 
 #endif

@@ -1,49 +1,52 @@
 #include "AdresatMenadzer.h"
 #include "MetodyPomocnicze.h"
 
-AdresatMenadzer :: AdresatMenadzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami)
-{
-    //idOstatniegoAdresata = 0;
-}
-
-void AdresatMenadzer :: dodajAdresata(int idZalogowanegoUzytkownika)
+void AdresatMenadzer :: dodajAdresata()
 {
     Adresat adresat;
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika);
+    adresat = podajDaneNowegoAdresata();
 
     adresaci.push_back(adresat);
-    plikZAdresatami.dopiszAdresataDoPliku(adresat);
-
-   idOstatniegoAdresata++;
+    if (plikZAdresatami.dopiszAdresataDoPliku(adresat))
+        cout << "Nowy adresat zostal dodany." << endl;
+    else
+        cout << "Blad. Nie udalo sie dodac adresata." << endl;
+    system ("pause");
 }
 
-Adresat AdresatMenadzer :: podajDaneNowegoAdresata(int idZalogowanegoUzytkownika)
+Adresat AdresatMenadzer :: podajDaneNowegoAdresata()
 {
     Adresat adresat;
+    string imie, nazwisko, numerTelefonu, email, adres;
 
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    adresat.ustawId((plikZAdresatami.pobierzIdOstatniegoAdresata() + 1));
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
-    cin.ignore();
-    adresat.ustawImie(MetodyPomocnicze :: wczytajLinie());
-    adresat.ustawImie(MetodyPomocnicze :: zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.wczytajImie()));
+    imie = MetodyPomocnicze :: wczytajLinie();
+    imie = MetodyPomocnicze :: zamienPierwszaLitereNaDuzaAPozostaleNaMale(imie);
 
     cout << "Podaj nazwisko: ";
-    adresat.ustawNazwisko(MetodyPomocnicze :: wczytajLinie());
-    adresat.ustawNazwisko(MetodyPomocnicze :: zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.wczytajNazwisko()));
+    nazwisko = MetodyPomocnicze :: wczytajLinie();
+    nazwisko = MetodyPomocnicze :: zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwisko);
 
     cout << "Podaj numer telefonu: ";
-    adresat.ustawNumerTelefonu(MetodyPomocnicze :: wczytajLinie());
+    numerTelefonu = MetodyPomocnicze :: wczytajLinie();
 
     cout << "Podaj email: ";
-    adresat.ustawEmail(MetodyPomocnicze :: wczytajLinie());
+    email = MetodyPomocnicze :: wczytajLinie();
 
     cout << "Podaj adres: ";
-    adresat.ustawAdres(MetodyPomocnicze :: wczytajLinie());
+    adres = MetodyPomocnicze :: wczytajLinie();
+
+    adresat.ustawImie(imie);
+    adresat.ustawNazwisko(nazwisko);
+    adresat.ustawNumerTelefonu(numerTelefonu);
+    adresat.ustawEmail(email);
+    adresat.ustawAdres(adres);
 
     return adresat;
 }
@@ -85,3 +88,5 @@ void AdresatMenadzer::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
 {
     adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
+
+
