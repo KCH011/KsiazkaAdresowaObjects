@@ -37,7 +37,6 @@ int main()
 {
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownik.txt","Adresat.txt");
    char wybor;
-   //int idZalogowanegoUzytkownika;
    while(true)
    {
 

@@ -173,7 +173,6 @@ int AdresatMenadzer::podajIdWybranegoAdresata()
 int AdresatMenadzer::usunAdresata()
 {
     int idUsuwanegoAdresata = 0;
-    int numerLiniiUsuwanegoAdresata = 0;
 
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -191,8 +190,6 @@ int AdresatMenadzer::usunAdresata()
             znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't')
             {
-                //numerLiniiUsuwanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idUsuwanegoAdresata);
-                //usunWybranaLinieWPliku(numerLiniiUsuwanegoAdresata);
                 plikZAdresatami.usunAdresataZPliku(idUsuwanegoAdresata);
                 adresaci.erase(itr);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
@@ -220,7 +217,6 @@ void AdresatMenadzer::edytujAdresata()
     system("cls");
     Adresat adresat;
     int idEdytowanegoAdresata = 0;
-    int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
@@ -302,13 +298,9 @@ char AdresatMenadzer::wybierzOpcjeZMenuEdycja()
 
 void AdresatMenadzer::zaktualizujDaneEdytowanegoAdresata(Adresat adresat)
 {
-    int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
 
     plikZAdresatami.edytujAdresataWPliku(adresat);
-    //numerLiniiEdytowanegoAdresata = zwrocNumerLiniiSzukanegoAdresata(idEdytowanegoAdresata);
-    //liniaZDanymiAdresata = zamienDaneAdresataNaLinieZDanymiOddzielonaPionowymiKreskami(adresat);
-    //edytujWybranaLinieWPliku(numerLiniiEdytowanegoAdresata, liniaZDanymiAdresata);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }
