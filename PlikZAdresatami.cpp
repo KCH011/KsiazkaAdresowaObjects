@@ -36,6 +36,7 @@ bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         plikTekstowy.close();
         return true;
     }
+    else
     return false;
 }
 
@@ -156,7 +157,12 @@ string PlikZAdresatami :: pobierzLiczbe(string tekst, int pozycjaZnaku)
     return liczba;
 }
 
-int PlikZAdresatami :: pobierzIdOstatniegoAdresata()
+int PlikZAdresatami::pobierzIdOstatniegoAdresata()
 {
     return idOstatniegoAdresata;
+}
+
+void PlikZAdresatami::wczytajIdOstatniegoAdresata(int Id)
+{
+    idOstatniegoAdresata=Id;
 }

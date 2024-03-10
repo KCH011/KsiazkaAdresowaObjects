@@ -53,17 +53,25 @@ void KsiazkaAdresowa :: wyswietlWszystkichAdresatow()
 
 }
 
-void KsiazkaAdresowa::wczytajAdresatowZPliku()
+void KsiazkaAdresowa :: wczytajAdresatowZPliku()
 {
     adresatMenadzer -> wczytajAdresatowZPliku(uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
 }
 
-bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+bool KsiazkaAdresowa :: czyUzytkownikJestZalogowany()
 {
     return uzytkownikMenadzer.czyUzytkownikJestZalogowany();
 }
 
+void KsiazkaAdresowa :: wyszukajAdresatowPoImieniu()
+{
+    adresatMenadzer -> wyszukajAdresatowPoImieniu();
+}
 
+void KsiazkaAdresowa :: wyszukajAdresatowPoNazwisku()
+{
+    adresatMenadzer -> wyszukajAdresatowPoNazwisku();
+}
 
 
 

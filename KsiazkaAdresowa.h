@@ -38,6 +38,8 @@ public:
     void wyswietlWszystkichAdresatow();
     void wczytajAdresatowZPliku();
     bool czyUzytkownikJestZalogowany();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif
