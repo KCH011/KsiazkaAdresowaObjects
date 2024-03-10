@@ -73,6 +73,15 @@ void KsiazkaAdresowa :: wyszukajAdresatowPoNazwisku()
     adresatMenadzer -> wyszukajAdresatowPoNazwisku();
 }
 
+int KsiazkaAdresowa :: usunAdresata()
+{
+    adresatMenadzer -> usunAdresata();
+}
+
+void KsiazkaAdresowa :: edytujAdresata()
+{
+    adresatMenadzer -> edytujAdresata();
+}
 
 
 

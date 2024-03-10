@@ -130,7 +130,7 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
             system("pause");
         }
     }
-   // plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
 

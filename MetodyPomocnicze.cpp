@@ -36,7 +36,7 @@ char MetodyPomocnicze :: wczytajZnak()
     }
     return znak;
 }
-/*
+
 int MetodyPomocnicze :: wczytajLiczbeCalkowita()
 {
     string wejscie = "";
@@ -53,7 +53,7 @@ int MetodyPomocnicze :: wczytajLiczbeCalkowita()
     }
     return liczba;
 }
-*/
+
 string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
 {
     if (!tekst.empty())
@@ -72,4 +72,18 @@ int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
     iss >> liczbaInt;
 
     return liczbaInt;
+}
+
+void MetodyPomocnicze::usunOdczytywanyPlik(string nazwaPlikuZRozszerzeniem)
+{
+    if (remove(nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
+    else
+        cout << "Nie udalo sie usunac pliku " << nazwaPlikuZRozszerzeniem << endl;
+}
+
+void MetodyPomocnicze::zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(string nazwaTymczasowegoPlikuZRozszerzeniem, string nazwaPlikuZRozszerzeniem)
+{
+    if (rename(nazwaTymczasowegoPlikuZRozszerzeniem.c_str(), nazwaPlikuZRozszerzeniem.c_str()) == 0) {}
+    else
+        cout << "Nazwa pliku nie zostala zmieniona." << nazwaPlikuZRozszerzeniem << endl;
 }
