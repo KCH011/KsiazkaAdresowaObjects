@@ -11,14 +11,14 @@ void KsiazkaAdresowa :: wypiszWszystkichUzytkownikow()
     uzytkownikMenadzer.wypiszWszystkichUzytkownikow();
 }
 
-int KsiazkaAdresowa :: logowanieUzytkownika()
+void KsiazkaAdresowa :: logowanieUzytkownika()
 {
-    int loginId = uzytkownikMenadzer.logowanieUzytkownika();
+    uzytkownikMenadzer.logowanieUzytkownika();
     if (uzytkownikMenadzer.czyUzytkownikJestZalogowany())
     {
         adresatMenadzer = new AdresatMenadzer (NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenadzer.pobierzIdZalogowanegoUzytkownika());
     }
-    return loginId;
+    //return loginId;
 }
 
 void KsiazkaAdresowa :: zmianaHaslaZalogowanegoUzytkownika()
@@ -73,6 +73,15 @@ void KsiazkaAdresowa :: wyszukajAdresatowPoNazwisku()
     adresatMenadzer -> wyszukajAdresatowPoNazwisku();
 }
 
+int KsiazkaAdresowa :: usunAdresata()
+{
+    adresatMenadzer -> usunAdresata();
+}
+
+void KsiazkaAdresowa :: edytujAdresata()
+{
+    adresatMenadzer -> edytujAdresata();
+}
 
 
 

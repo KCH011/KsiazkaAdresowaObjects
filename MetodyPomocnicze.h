@@ -17,6 +17,9 @@ public:
      static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
      static int konwersjaStringNaInt(string liczba);
      static char wczytajZnak();
+     static int wczytajLiczbeCalkowita();
+     static void usunOdczytywanyPlik(string nazwaPlikuZRozszerzeniem);
+     static void zmienNazweTymczasowegoPlikuNaNazweOdczytywanegoPliku(string nazwaTymczasowegoPlikuZRozszerzeniem, string nazwaPlikuZRozszerzeniem);
 };
 
 #endif

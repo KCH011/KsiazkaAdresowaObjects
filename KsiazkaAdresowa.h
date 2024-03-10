@@ -28,10 +28,10 @@ public:
     {
       delete adresatMenadzer;
       adresatMenadzer = NULL;
-    };
+    }
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    int logowanieUzytkownika();
+    void logowanieUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
     void dodajAdresata();
@@ -40,6 +40,8 @@ public:
     bool czyUzytkownikJestZalogowany();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    void edytujAdresata();
+    int usunAdresata();
 };
 
 #endif
